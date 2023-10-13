@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: modi-service
+  namespace: alpha
+spec:
+  type: NodePort
+  selector:
+    env: staging
+  ports:
+  - protocol: TCP
+    nodePort: 31797
+    port: 8000
+    targetPort: 80

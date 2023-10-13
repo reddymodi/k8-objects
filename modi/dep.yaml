@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kesava
+  namespace: alpha
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      env: staging
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        env: staging
+        tier: frontend
+    spec:
+      containers:
+      - name: k-nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+

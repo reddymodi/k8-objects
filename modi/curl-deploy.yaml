@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: curl-deployment
+  namespace: alpha
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+       env: debug
+  template:
+    metadata:
+      labels:
+        env: debug
+    spec:
+      containers:
+      - name: curl-container
+        image: curlimages/curl:latest
+        command: ["sleep", "infinity"]
+       
+       

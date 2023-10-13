@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: testpod
+spec:
+  containers:
+  - name: testcontainer
+    image: nginx
+    command: [ 'sh', '-c', 'echo hello kubernetes!!!']
+  restartPolicy: Never 
